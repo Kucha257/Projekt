@@ -1,78 +1,174 @@
-html, body {
+html, body{
     background-color: #121111;
-    margin: 0;
-    padding: 0;
+    margin: 0px;
+    padding: 0px;
     font-family: 'Roboto', sans-serif;
 }
 
-/* Nagłówek */
-.naglowek { width: 100%; height: 140px; }
-header {
+.naglowek{
+    width: 100%;
+    height: 140px;
+}
+
+header{
     width: 100%;
     height: 140px;
     display: flex;
     align-items: center;
-    flex-wrap: wrap;
 }
-.logo1, .srodekhead, .prawyhead { height: 100%; display: flex; align-items: center; justify-content: center; }
-.logo1 { width: 20%; background-color: #121111; }
-.srodekhead { width: 60%; background-color: #121111; }
+
+.logo1, .srodekhead, .prawyhead{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo1{
+    width: 20%;
+    background-color: #121111;
+}
+
+.srodekhead{
+    width: 60%;
+    background-color: #121111;
+}
+
 .prawyhead {
     width: 20%;
     background-color: #121111;
-    display: flex;
+    display: flex;          /* dodaj flex, jeśli go nie ma */
     align-items: center;
-    justify-content: flex-end;
-    gap: 20px;
+    justify-content: flex-end; /* ikony przy prawej krawędzi */
+    gap: 20px;              /* odstęp między ikonami */
     padding-right: 50px;
 }
 
-.logo { width: 200px; height: 135px; cursor: pointer; }
+.logo{
+    width: 200px;
+    height: 135px;
+    cursor: pointer;
+}
 
-/* Menu i ikony */
-.menu-dropdown { position: relative; display: inline-block; }
-.ikonka { cursor: pointer; color: white; }
-.ikonka:hover { color: #ff6600; }
+.menu-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.ikonka {
+    cursor: pointer;
+    color: white; /* kolor hamburgera */
+}
+
+.ikonka:hover{
+    color:#ff6600;
+}
+
+/* Lista ukryta domyślnie, z animacją */
 .dropdown-menu {
     opacity: 0;
     visibility: hidden;
     position: absolute;
-    top: 40px;
+    top: 40px; /* odległość od ikony */
     right: 0;
     background-color: #333;
     list-style: none;
     padding: 0;
     margin: 0;
     border-radius: 5px;
-    width: 200px;
+    width: 200px; /* szerokość listy */
     transform: translateY(-10px);
-    transition: all 0.3s ease;
+    transition: all 0.3s ease; /* płynna animacja */
     z-index: 100;
 }
-.dropdown-menu li { border-bottom: 1px solid #555; }
-.dropdown-menu li:last-child { border-bottom: none; }
-.dropdown-menu li a { color: white; text-decoration: none; display: block; padding: 12px 16px; }
-.dropdown-menu li a:hover { background-color: #555; }
-.menu-dropdown:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
 
-.profile-icon { display: inline-block; cursor: pointer; }
-.profile-icon .ikonka { width: 24px; height: 24px; color: white; transition: transform 0.2s ease; }
-.profile-icon .ikonka:hover { transform: scale(1.2); color: #ff6600; }
+/* Pojedyncze elementy listy */
+.dropdown-menu li {
+    border-bottom: 1px solid #555;
+}
 
-/* Panel wyszukiwania */
+.dropdown-menu li:last-child {
+    border-bottom: none;
+}
+
+.dropdown-menu li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 12px 16px;
+}
+
+/* Hover po elemencie */
+.dropdown-menu li a:hover {
+    background-color: #555;
+}
+
+/* Pokaz listę po najechaniu */
+.menu-dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0); /* płynne przesunięcie w dół */
+}
+
+.profile-icon {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.profile-icon .ikonka {
+    width: 24px;  /* taki sam rozmiar jak hamburger */
+    height: 24px;
+    color: white; /* taki sam kolor jak inne ikonki */
+    transition: transform 0.2s ease; /* delikatna animacja na hover */
+}
+
+.profile-icon .ikonka:hover {
+    transform: scale(1.2); /* lekko powiększenie przy najechaniu */
+    color:#ff6600;
+}
+
 .search-panel {
     display: flex;
     align-items: center;
     width: 100%;
-    max-width: 400px;
-    background-color: #222;
+    max-width: 400px; /* szerokość panelu */
+    background-color: #222; /* tło panelu */
     border-radius: 25px;
     overflow: hidden;
     box-shadow: 0 2px 5px rgba(0,0,0,0.5);
 }
-.search-input { flex: 1; padding: 10px 15px; border: none; background: transparent; color: white; font-size: 16px; }
-.search-input::placeholder { color: #bbb; }
-.search-input:focus { outline: none; }
+
+.search-input {
+    flex: 1;
+    padding: 10px 15px;
+    border: none;
+    background: transparent;
+    color: white;
+    font-size: 16px;
+}
+
+.search-input::placeholder {
+    color: #bbb;
+}
+
+.search-input:focus {
+    outline: none;
+}
+
+.search-btn {
+    padding: 10px 15px;
+    border: none;
+    background-color: #555;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.2s ease;
+}
+
+.search-btn:hover {
+    background-color: #777;
+}
+
 .search-btn {
     padding: 10px 15px;
     border: none;
@@ -83,12 +179,26 @@ header {
     justify-content: center;
     transition: background 0.2s ease;
 }
-.search-btn:hover { background-color: #ff6600; }
-.search-btn svg { width: 16px; height: 16px; fill: white; }
 
-.orange { border: none; height: 4px; width: 80%; background: linear-gradient(to right, transparent, orange, transparent); margin: 20px auto; }
+.search-btn:hover {
+    background-color: #ff6600;
+}
 
-nav {
+.search-btn svg {
+    width: 16px;   
+    height: 16px;
+    fill: white;   
+}
+
+.orange {
+    border: none; /* usuń standardowy hr */
+    height: 4px;  /* grubość linii */
+    width: 80%;
+    background: linear-gradient(to right, transparent, orange, transparent);
+    margin: 20px auto; /* wyśrodkowanie */
+}
+
+nav{
     background-color: #121111;
     width: 100%;
     height: 60px;
@@ -96,42 +206,41 @@ nav {
     justify-content: center;
     align-items: center;
     gap: 15px;
-    flex-wrap: wrap;
+    padding-bottom: 20px;
 }
 
-.btn { width: 100px; height: 55px; color: white; background-color: #121111; cursor: pointer; border: none; }
-.btn:hover { background-color: #1f1e1e; color: #ff6600; }
-
-/* Katalogi */
-.katalogi {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+.btn{
+    width: 100px;
+    height: 55px;
+    color: white;
     background-color: #121111;
-    padding: 20px;
-}
-.katalogi-conteiner { display: flex; justify-content: center; }
-.katalogimg { width: 100%; height: auto; max-width: 650px; }
-
-/* Responsywność */
-@media screen and (max-width: 1024px) {
-    header { flex-direction: column; height: auto; padding: 10px 0; }
-    .logo1, .srodekhead, .prawyhead { width: 100%; justify-content: center !important; padding: 5px 0; }
-    .prawyhead { justify-content: center; padding-right: 0; }
-    nav { flex-direction: column; height: auto; padding: 10px 0; }
+    cursor: pointer;
+    border: none;
 }
 
-@media screen and (max-width: 768px) {
-    .search-panel { max-width: 300px; }
-    .btn { width: 80px; height: 45px; font-size: 14px; }
-    .katalogimg { max-width: 100%; height: auto; }
+.btn:hover{
+    background-color: #1f1e1e;
+    color: #ff6600;
 }
 
-@media screen and (max-width: 480px) {
-    .search-panel { max-width: 200px; }
-    .btn { width: 70px; height: 40px; font-size: 12px; }
-    .katalogimg { max-width: 100%; height: auto; }
+.katalogi{
+    width: 80%;
+    height: 2675px;
+    background-color: #121111;
+    display: flex;
+    justify-content: space-between;
+    gap: 43px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.katalogi-conteiner{
+    display: flex;
+    justify-content: center;
+}
+
+.katalogimg{
+    width: 650px;
+    height: 650px;
 }
