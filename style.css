@@ -1,138 +1,95 @@
-html, body{
+html, body {
     background-color: #121111;
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     font-family: 'Roboto', sans-serif;
 }
 
-.naglowek{
+/* Nagłówek */
+.naglowek {
     width: 100%;
     height: 140px;
 }
 
-header{
+header {
     width: 100%;
     height: 140px;
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
 }
 
-.logo1, .srodekhead, .prawyhead{
+.logo1, .srodekhead, .prawyhead {
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.logo1{
-    width: 20%;
-    background-color: #121111;
-}
-
-.srodekhead{
-    width: 60%;
-    background-color: #121111;
-}
-
+.logo1 { width: 20%; background-color: #121111; }
+.srodekhead { width: 60%; background-color: #121111; }
 .prawyhead {
     width: 20%;
     background-color: #121111;
-    display: flex;          /* dodaj flex, jeśli go nie ma */
+    display: flex;
     align-items: center;
-    justify-content: flex-end; /* ikony przy prawej krawędzi */
-    gap: 20px;              /* odstęp między ikonami */
+    justify-content: flex-end;
+    gap: 20px;
     padding-right: 50px;
 }
 
-.logo{
-    width: 200px;
-    height: 135px;
-    cursor: pointer;
-}
+.logo { width: 200px; height: 135px; cursor: pointer; }
 
-.menu-dropdown {
-    position: relative;
-    display: inline-block;
-}
+.menu-dropdown { position: relative; display: inline-block; }
+.ikonka { cursor: pointer; color: white; }
+.ikonka:hover { color: #ff6600; }
 
-.ikonka {
-    cursor: pointer;
-    color: white; /* kolor hamburgera */
-}
-
-.ikonka:hover{
-    color:#ff6600;
-}
-
-/* Lista ukryta domyślnie, z animacją */
 .dropdown-menu {
     opacity: 0;
     visibility: hidden;
     position: absolute;
-    top: 40px; /* odległość od ikony */
+    top: 40px;
     right: 0;
     background-color: #333;
     list-style: none;
     padding: 0;
     margin: 0;
     border-radius: 5px;
-    width: 200px; /* szerokość listy */
+    width: 200px;
     transform: translateY(-10px);
-    transition: all 0.3s ease; /* płynna animacja */
+    transition: all 0.3s ease;
     z-index: 100;
 }
 
-/* Pojedyncze elementy listy */
-.dropdown-menu li {
-    border-bottom: 1px solid #555;
-}
-
-.dropdown-menu li:last-child {
-    border-bottom: none;
-}
-
+.dropdown-menu li { border-bottom: 1px solid #555; }
+.dropdown-menu li:last-child { border-bottom: none; }
 .dropdown-menu li a {
     color: white;
     text-decoration: none;
     display: block;
     padding: 12px 16px;
 }
-
-/* Hover po elemencie */
-.dropdown-menu li a:hover {
-    background-color: #555;
-}
-
-/* Pokaz listę po najechaniu */
+.dropdown-menu li a:hover { background-color: #555; }
 .menu-dropdown:hover .dropdown-menu {
     opacity: 1;
     visibility: visible;
-    transform: translateY(0); /* płynne przesunięcie w dół */
+    transform: translateY(0);
 }
 
-.profile-icon {
-    display: inline-block;
-    cursor: pointer;
-}
-
+.profile-icon { display: inline-block; cursor: pointer; }
 .profile-icon .ikonka {
-    width: 24px;  /* taki sam rozmiar jak hamburger */
-    height: 24px;
-    color: white; /* taki sam kolor jak inne ikonki */
-    transition: transform 0.2s ease; /* delikatna animacja na hover */
+    width: 24px; height: 24px;
+    color: white;
+    transition: transform 0.2s ease;
 }
-
-.profile-icon .ikonka:hover {
-    transform: scale(1.2); /* lekko powiększenie przy najechaniu */
-    color:#ff6600;
-}
+.profile-icon .ikonka:hover { transform: scale(1.2); color: #ff6600; }
 
 .search-panel {
     display: flex;
     align-items: center;
     width: 100%;
-    max-width: 400px; /* szerokość panelu */
-    background-color: #222; /* tło panelu */
+    max-width: 400px;
+    background-color: #222;
     border-radius: 25px;
     overflow: hidden;
     box-shadow: 0 2px 5px rgba(0,0,0,0.5);
@@ -146,28 +103,8 @@ header{
     color: white;
     font-size: 16px;
 }
-
-.search-input::placeholder {
-    color: #bbb;
-}
-
-.search-input:focus {
-    outline: none;
-}
-
-.search-btn {
-    padding: 10px 15px;
-    border: none;
-    background-color: #555;
-    color: white;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background 0.2s ease;
-}
-
-.search-btn:hover {
-    background-color: #777;
-}
+.search-input::placeholder { color: #bbb; }
+.search-input:focus { outline: none; }
 
 .search-btn {
     padding: 10px 15px;
@@ -179,26 +116,18 @@ header{
     justify-content: center;
     transition: background 0.2s ease;
 }
-
-.search-btn:hover {
-    background-color: #ff6600;
-}
-
-.search-btn svg {
-    width: 16px;   
-    height: 16px;
-    fill: white;   
-}
+.search-btn:hover { background-color: #ff6600; }
+.search-btn svg { width: 16px; height: 16px; fill: white; }
 
 .orange {
-    border: none; /* usuń standardowy hr */
-    height: 4px;  /* grubość linii */
+    border: none;
+    height: 4px;
     width: 80%;
     background: linear-gradient(to right, transparent, orange, transparent);
-    margin: 20px auto; /* wyśrodkowanie */
+    margin: 20px auto;
 }
 
-nav{
+nav {
     background-color: #121111;
     width: 100%;
     height: 60px;
@@ -206,10 +135,10 @@ nav{
     justify-content: center;
     align-items: center;
     gap: 15px;
-    padding-bottom: 20px;
+    flex-wrap: wrap;
 }
 
-.btn{
+.btn {
     width: 100px;
     height: 55px;
     color: white;
@@ -217,113 +146,41 @@ nav{
     cursor: pointer;
     border: none;
 }
-
-.btn:hover{
-    background-color: #1f1e1e;
-    color: #ff6600;
-}
+.btn:hover { background-color: #1f1e1e; color: #ff6600; }
 
 .Markislider-container {
-    width: 66%;
+    width: 90%;
     margin: 20px auto;
     position: relative;
 }
-
-.Markislider-wrapper {
-    width: 950px;
-    margin: 20px auto;
-    overflow: hidden;
-}
-
-.Markislider-track {
-    display: flex;
-    gap: 10px;
-    transition: transform 0.5s ease-in-out;
-}
+.Markislider-wrapper { width: 100%; margin: 20px auto; overflow: hidden; }
+.Markislider-track { display: flex; gap: 10px; transition: transform 0.5s ease-in-out; }
 
 .slide {
-    flex: 0 0 150px;
-    height: 150px;
-    width: 150px;
+    flex: 0 0 150px; height: 150px; width: 150px;
     background-color: #ff6600;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 24px;
-    color: white;
-    cursor: pointer;
+    display: flex; justify-content: center; align-items: center;
+    font-size: 24px; color: white; cursor: pointer;
+}
+.slide img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* Responsywność */
+@media screen and (max-width: 1024px) {
+    header { flex-direction: column; height: auto; padding: 10px 0; }
+    .logo1, .srodekhead, .prawyhead { width: 100%; justify-content: center !important; padding: 5px 0; }
+    .prawyhead { justify-content: center; padding-right: 0; }
+    nav { flex-direction: column; height: auto; padding: 10px 0; }
 }
 
-.slide img {
-    width: 100%;        /* wypełnia całą szerokość slajdu */
-    height: 100%;       /* wypełnia całą wysokość slajdu */
-    object-fit: cover;  /* przycina obrazek, żeby nie rozciągał się nieproporcjonalnie */
-    display: block;     /* usuwa ewentualne odstępy pod obrazkiem */
+@media screen and (max-width: 768px) {
+    .search-panel { max-width: 300px; }
+    .btn { width: 80px; height: 45px; font-size: 14px; }
+    .Markislider-wrapper { width: 100%; }
+    .slide { flex: 0 0 120px; height: 120px; width: 120px; font-size: 20px; }
 }
 
-
-.slide:last-child {
-    margin-right: 0;
-}
-
-/* ostatni kwadrat bez marginesu */
-.Markislider-track .slide:last-child {
-    margin-right: 0;
-}
-
-main{
-    width: 80%;
-    
-}
-
-.main-container{
-    display: flex;
-    justify-content: center;
-}
-
-.metody{
-    display: flex;
-    justify-content: center;
-    gap: 5%;
-}
-
-.method-feeder, .wedkarstwo-karpiowe{
-    width: 50%;
-    height: 800px;
-    background-color: #1f1e1e;
-}
-
-.method-feederh2, .karpiarstwoh2{
-    color: white;
-    display: flex;
-    justify-content: center;
-}
-
-.metoda-size{
-    width: 600px;
-    height: 400px;
-}
-
-.fota-container{
-    display: flex;
-    justify-content: center;
-}
-
-.fota-opis{
-    color: white;
-    text-align: center;
-}
-
-.btn2{
-    width: 120px;
-    height: 55px;
-    color: white;
-    background-color: #1f1e1e;
-    cursor: pointer; 
-    border: none;
-}
-
-.btn2:hover{
-    background-color: #121111;
-    color: #ff6600;
+@media screen and (max-width: 480px) {
+    .search-panel { max-width: 200px; }
+    .btn { width: 70px; height: 40px; font-size: 12px; }
+    .slide { flex: 0 0 100px; height: 100px; width: 100px; font-size: 16px; }
 }
