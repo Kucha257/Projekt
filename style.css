@@ -37,10 +37,10 @@ header{
 .prawyhead {
     width: 20%;
     background-color: #121111;
-    display: flex;          /* dodaj flex, jeśli go nie ma */
+    display: flex;
     align-items: center;
-    justify-content: flex-end; /* ikony przy prawej krawędzi */
-    gap: 20px;              /* odstęp między ikonami */
+    justify-content: flex-end;
+    gap: 20px;
     padding-right: 50px;
 }
 
@@ -57,32 +57,30 @@ header{
 
 .ikonka {
     cursor: pointer;
-    color: white; /* kolor hamburgera */
+    color: white;
 }
 
 .ikonka:hover{
     color:#ff6600;
 }
 
-/* Lista ukryta domyślnie, z animacją */
 .dropdown-menu {
     opacity: 0;
     visibility: hidden;
     position: absolute;
-    top: 40px; /* odległość od ikony */
+    top: 40px;
     right: 0;
     background-color: #333;
     list-style: none;
     padding: 0;
     margin: 0;
     border-radius: 5px;
-    width: 200px; /* szerokość listy */
+    width: 200px;
     transform: translateY(-10px);
-    transition: all 0.3s ease; /* płynna animacja */
+    transition: all 0.3s ease;
     z-index: 100;
 }
 
-/* Pojedyncze elementy listy */
 .dropdown-menu li {
     border-bottom: 1px solid #555;
 }
@@ -98,16 +96,14 @@ header{
     padding: 12px 16px;
 }
 
-/* Hover po elemencie */
 .dropdown-menu li a:hover {
     background-color: #555;
 }
 
-/* Pokaz listę po najechaniu */
 .menu-dropdown:hover .dropdown-menu {
     opacity: 1;
     visibility: visible;
-    transform: translateY(0); /* płynne przesunięcie w dół */
+    transform: translateY(0);
 }
 
 .profile-icon {
@@ -116,14 +112,14 @@ header{
 }
 
 .profile-icon .ikonka {
-    width: 24px;  /* taki sam rozmiar jak hamburger */
+    width: 24px;
     height: 24px;
-    color: white; /* taki sam kolor jak inne ikonki */
-    transition: transform 0.2s ease; /* delikatna animacja na hover */
+    color: white;
+    transition: transform 0.2s ease;
 }
 
 .profile-icon .ikonka:hover {
-    transform: scale(1.2); /* lekko powiększenie przy najechaniu */
+    transform: scale(1.2);
     color:#ff6600;
 }
 
@@ -131,8 +127,8 @@ header{
     display: flex;
     align-items: center;
     width: 100%;
-    max-width: 400px; /* szerokość panelu */
-    background-color: #222; /* tło panelu */
+    max-width: 400px;
+    background-color: #222;
     border-radius: 25px;
     overflow: hidden;
     box-shadow: 0 2px 5px rgba(0,0,0,0.5);
@@ -163,21 +159,9 @@ header{
     cursor: pointer;
     font-size: 16px;
     transition: background 0.2s ease;
-}
-
-.search-btn:hover {
-    background-color: #777;
-}
-
-.search-btn {
-    padding: 10px 15px;
-    border: none;
-    background-color: #555;
-    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: background 0.2s ease;
 }
 
 .search-btn:hover {
@@ -185,17 +169,25 @@ header{
 }
 
 .search-btn svg {
-    width: 16px;   
+    width: 16px;
     height: 16px;
-    fill: white;   
+    fill: white;
 }
 
 .orange {
-    border: none; /* usuń standardowy hr */
-    height: 4px;  /* grubość linii */
+    border: none;
+    height: 4px;
     width: 80%;
     background: linear-gradient(to right, transparent, orange, transparent);
-    margin: 20px auto; /* wyśrodkowanie */
+    margin: 20px auto;
+}
+
+.orange-main{
+    border: none;
+    height: 4px;
+    width: 100%;
+    background: linear-gradient(to right, transparent, orange, transparent);
+    margin: 20px auto;
 }
 
 nav{
@@ -255,25 +247,22 @@ nav{
 }
 
 .slide img {
-    width: 100%;        /* wypełnia całą szerokość slajdu */
-    height: 100%;       /* wypełnia całą wysokość slajdu */
-    object-fit: cover;  /* przycina obrazek, żeby nie rozciągał się nieproporcjonalnie */
-    display: block;     /* usuwa ewentualne odstępy pod obrazkiem */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
-
 
 .slide:last-child {
     margin-right: 0;
 }
 
-/* ostatni kwadrat bez marginesu */
 .Markislider-track .slide:last-child {
     margin-right: 0;
 }
 
 main{
     width: 80%;
-    
 }
 
 .main-container{
@@ -326,7 +315,7 @@ main{
     height: 55px;
     color: white;
     background-color: #161515;
-    cursor: pointer; 
+    cursor: pointer;
     border: none;
 }
 
@@ -334,17 +323,75 @@ main{
     color: #ff6600;
 }
 
-.zanety-przynety{
+.dobor-sprzetu{
     color: white;
     background-color: #161515;
+    width: 80%;
 }
 
-.przynety-zanety{
+.wyposazenie{
     color: white;
     display: flex;
     justify-content: center;
 }
 
-.opis-zanety-przynety{
-    
+.dobranie-wyposazenia{
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+
+.opis-wyposazenie{
+    display: flex;
+    align-items: center;
+    gap: 2%;
+}
+
+.gearfota{
+    width: 35%;
+}
+
+.dobor-sprzetu-conainer{
+    display: flex;
+    justify-content: center;
+}
+
+.lokalizowanie{
+    color: white;
+    background-color: #161515;
+    width: 80%;
+}
+
+.lokalizowanie-container{
+    display: flex;
+    justify-content: center;
+}
+
+.lokalizowanie-fota{
+    width: 70%;
+}
+
+.lokalizowanie-ryb{
+    display: flex;
+    justify-content: center;
+}
+
+.opis-lokalizowanie{
+    display: flex;
+    justify-content: center;
+    width: 80%;
+}
+
+.opis-lokalizowanie-container{
+    display: flex;
+    justify-content: center;
+}
+
+.stopka{
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 70px;
 }
