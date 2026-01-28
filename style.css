@@ -396,4 +396,29 @@ main{
     height: 70px;
 }
 
+/* === NAPRAWA ROZJEŻDŻANIA === */
 
+/* tekst MOŻE się łamać */
+h2 {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+}
+
+/* sekcje nie wypychają layoutu */
+.method-feeder,
+.wedkarstwo-karpiowe {
+    height: auto;
+    min-height: 800px;
+}
+
+/* obrazy nie łamią kolumn */
+.metoda-size {
+    max-width: 100%;
+    height: auto;
+}
+
+/* zabezpieczenie przed overflow */
+* {
+    max-width: 100%;
+}
