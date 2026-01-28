@@ -422,3 +422,136 @@ h2 {
 * {
     max-width: 100%;
 }
+
+/* === SOFT RESPONSYWNOŚĆ – zachowuje układ === */
+
+/* Header i nagłówek */
+@media (max-width: 992px) {
+    header {
+        flex-wrap: wrap; /* pozwala elementom zawijać się */
+        padding: 10px;
+        height: auto; 
+    }
+
+    .logo1, .srodekhead, .prawyhead {
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 5px;
+    }
+
+    .prawyhead {
+        justify-content: center;
+        padding-right: 0;
+        gap: 10px;
+    }
+
+    .logo {
+        width: 150px;
+        height: auto;
+    }
+
+    nav {
+        flex-direction: column;
+        height: auto;
+        gap: 10px;
+        padding-bottom: 10px;
+    }
+}
+
+/* Sekcje główne */
+@media (max-width: 992px) {
+    .metody {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .method-feeder, .wedkarstwo-karpiowe {
+        width: 100%;
+        min-height: 600px;
+    }
+
+    .metoda-size {
+        width: 90%;
+        height: auto;
+    }
+
+    .fota-opis, .dobor-sprzetu, .lokalizowanie, .opis-lokalizowanie {
+        width: 90%;
+    }
+
+    .gear-fota, .lokalizowanie-fota {
+        width: 90%;
+    }
+}
+
+/* Slider pozostaje niezmieniony, zachowujemy overflow i szerokości */
+@media (max-width: 600px) {
+    .btn, .btn2 {
+        width: 80px;
+        height: 40px;
+        font-size: 14px;
+    }
+
+    .search-panel {
+        width: 100%;
+    }
+
+    .search-input {
+        font-size: 14px;
+        padding: 8px 10px;
+    }
+
+    .search-btn {
+        padding: 8px 10px;
+        font-size: 14px;
+    }
+
+    .logo {
+        width: 120px;
+        height: auto;
+    }
+}
+
+/* === NAPRAWA PRZYCISKÓW W SEKCJI METODY === */
+@media (max-width: 600px) {
+    .metody {
+        flex-direction: column; /* kolumny jedna pod drugą */
+        gap: 20px;
+    }
+
+    .method-feeder, .wedkarstwo-karpiowe {
+        width: 100%;
+        height: auto;      /* pozwala rosnąć w zależności od treści */
+        min-height: 400px; /* estetyczne minimum */
+        display: flex;
+        flex-direction: column; /* wszystkie elementy w kolumnie */
+        align-items: center;    /* centrowanie obrazów i przycisków */
+        padding: 10px 0;
+    }
+
+    .fota-opis {
+        width: 90%;
+        height: auto;   /* naturalna wysokość w zależności od tekstu */
+        text-align: center;
+        margin-bottom: 10px; /* odstęp przed przyciskiem */
+    }
+
+    .btn-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .btn2 {
+        width: 90%;
+        max-width: 200px;
+        height: auto;
+        padding: 10px 0;
+        margin-top: 10px; /* odstęp od tekstu */
+    }
+
+    .metoda-size {
+        width: 90%;
+        height: auto;
+    }
+}
