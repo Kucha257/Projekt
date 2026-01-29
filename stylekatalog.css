@@ -3,6 +3,7 @@ html, body{
     margin: 0px;
     padding: 0px;
     font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
 }
 
 .naglowek{
@@ -127,12 +128,13 @@ header{
     color:#ff6600;
 }
 
+/* Panel wyszukiwania */
 .search-panel {
     display: flex;
     align-items: center;
     width: 100%;
-    max-width: 400px; /* szerokość panelu */
-    background-color: #222; /* tło panelu */
+    max-width: 400px;
+    background-color: #222;
     border-radius: 25px;
     overflow: hidden;
     box-shadow: 0 2px 5px rgba(0,0,0,0.5);
@@ -159,20 +161,6 @@ header{
     padding: 10px 15px;
     border: none;
     background-color: #555;
-    color: white;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background 0.2s ease;
-}
-
-.search-btn:hover {
-    background-color: #777;
-}
-
-.search-btn {
-    padding: 10px 15px;
-    border: none;
-    background-color: #555;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -185,20 +173,22 @@ header{
 }
 
 .search-btn svg {
-    width: 16px;   
+    width: 16px;
     height: 16px;
-    fill: white;   
+    fill: white;
 }
 
+/* Linie dekoracyjne */
 .orange {
-    border: none; /* usuń standardowy hr */
-    height: 4px;  /* grubość linii */
+    border: none;
+    height: 4px;
     width: 80%;
     background: linear-gradient(to right, transparent, orange, transparent);
-    margin: 20px auto; /* wyśrodkowanie */
+    margin: 20px auto;
 }
 
-nav{
+/* Nawigacja */
+nav {
     background-color: #121111;
     width: 100%;
     height: 60px;
@@ -206,10 +196,10 @@ nav{
     justify-content: center;
     align-items: center;
     gap: 15px;
-    padding-bottom: 20px;
+    flex-wrap: wrap;
 }
 
-.btn{
+.btn {
     width: 100px;
     height: 55px;
     color: white;
@@ -218,29 +208,182 @@ nav{
     border: none;
 }
 
-.btn:hover{
+.btn:hover {
     background-color: #1f1e1e;
     color: #ff6600;
 }
 
-.katalogi{
-    width: 80%;
-    height: 2675px;
-    background-color: #121111;
-    display: flex;
-    justify-content: space-between;
-    gap: 43px;
+/* Katalogi / grid */
+.katalogi {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
+    background-color: #121111;
+    padding: 20px;
 }
 
-.katalogi-conteiner{
+.katalogi-conteiner {
     display: flex;
     justify-content: center;
 }
 
-.katalogimg{
-    width: 650px;
-    height: 650px;
+.katalogimg {
+    width: 100%;
+    height: auto;
+    max-width: 650px;
+}
+
+/* Slider */
+.Markislider-container {
+    width: 90%;
+    margin: 20px auto;
+    position: relative;
+}
+
+.Markislider-wrapper {
+    width: 100%;
+    margin: 20px auto;
+    overflow: hidden;
+}
+
+.Markislider-track {
+    display: flex;
+    gap: 10px;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    flex: 0 0 150px;
+    height: 150px;
+    width: 150px;
+    background-color: #ff6600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Responsywność */
+@media screen and (max-width: 1024px) {
+    header {
+        flex-direction: column;
+        height: auto;
+        padding: 10px 0;
+    }
+
+    .logo1, .srodekhead, .prawyhead {
+        width: 100%;
+        justify-content: center !important;
+        padding: 5px 0;
+    }
+
+    .prawyhead {
+        justify-content: center;
+        padding-right: 0;
+    }
+
+    nav {
+        flex-direction: column;
+        height: auto;
+        padding: 10px 0;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .search-panel {
+        max-width: 300px;
+    }
+
+    .btn {
+        width: 80px;
+        height: 45px;
+        font-size: 14px;
+    }
+
+    .katalogimg {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .Markislider-wrapper {
+        width: 100%;
+    }
+
+    .slide {
+        flex: 0 0 120px;
+        height: 120px;
+        width: 120px;
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .search-panel {
+        max-width: 200px;
+    }
+
+    .btn {
+        width: 70px;
+        height: 40px;
+        font-size: 12px;
+    }
+
+    .slide {
+        flex: 0 0 100px;
+        height: 100px;
+        width: 100px;
+        font-size: 16px;
+    }
+}
+
+/* zabezpieczenie przed overflow */
+* {
+    max-width: 100%;
+}
+
+/* === SOFT RESPONSYWNOŚĆ – zachowuje układ === */
+
+/* Header i nagłówek */
+@media (max-width: 992px) {
+    header {
+        flex-wrap: wrap; /* pozwala elementom zawijać się */
+        padding: 10px;
+        height: auto; 
+    }
+
+    .logo1, .srodekhead, .prawyhead {
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 5px;
+    }
+
+    .prawyhead {
+        justify-content: center;
+        padding-right: 0;
+        gap: 10px;
+    }
+
+    .logo {
+        width: 150px;
+        height: auto;
+    }
+
+    nav {
+        flex-direction: column;
+        height: auto;
+        gap: 10px;
+        padding-bottom: 10px;
+    }
 }
