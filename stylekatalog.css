@@ -38,10 +38,10 @@ header{
 .prawyhead {
     width: 20%;
     background-color: #121111;
-    display: flex;          /* dodaj flex, jeśli go nie ma */
+    display: flex;         
     align-items: center;
-    justify-content: flex-end; /* ikony przy prawej krawędzi */
-    gap: 20px;              /* odstęp między ikonami */
+    justify-content: flex-end; 
+    gap: 20px;            
     padding-right: 50px;
 }
 
@@ -58,32 +58,30 @@ header{
 
 .ikonka {
     cursor: pointer;
-    color: white; /* kolor hamburgera */
+    color: white;
 }
 
 .ikonka:hover{
     color:#ff6600;
 }
 
-/* Lista ukryta domyślnie, z animacją */
 .dropdown-menu {
     opacity: 0;
     visibility: hidden;
     position: absolute;
-    top: 40px; /* odległość od ikony */
+    top: 40px;
     right: 0;
     background-color: #333;
     list-style: none;
     padding: 0;
     margin: 0;
     border-radius: 5px;
-    width: 200px; /* szerokość listy */
+    width: 200px; 
     transform: translateY(-10px);
-    transition: all 0.3s ease; /* płynna animacja */
+    transition: all 0.3s ease;
     z-index: 100;
 }
 
-/* Pojedyncze elementy listy */
 .dropdown-menu li {
     border-bottom: 1px solid #555;
 }
@@ -99,16 +97,14 @@ header{
     padding: 12px 16px;
 }
 
-/* Hover po elemencie */
 .dropdown-menu li a:hover {
     background-color: #555;
 }
 
-/* Pokaz listę po najechaniu */
 .menu-dropdown:hover .dropdown-menu {
     opacity: 1;
     visibility: visible;
-    transform: translateY(0); /* płynne przesunięcie w dół */
+    transform: translateY(0);
 }
 
 .profile-icon {
@@ -117,18 +113,17 @@ header{
 }
 
 .profile-icon .ikonka {
-    width: 24px;  /* taki sam rozmiar jak hamburger */
+    width: 24px;  
     height: 24px;
-    color: white; /* taki sam kolor jak inne ikonki */
-    transition: transform 0.2s ease; /* delikatna animacja na hover */
+    color: white; 
+    transition: transform 0.2s ease; 
 }
 
 .profile-icon .ikonka:hover {
-    transform: scale(1.2); /* lekko powiększenie przy najechaniu */
+    transform: scale(1.2); 
     color:#ff6600;
 }
 
-/* Panel wyszukiwania */
 .search-panel {
     display: flex;
     align-items: center;
@@ -178,7 +173,6 @@ header{
     fill: white;
 }
 
-/* Linie dekoracyjne */
 .orange {
     border: none;
     height: 4px;
@@ -187,7 +181,6 @@ header{
     margin: 20px auto;
 }
 
-/* Nawigacja */
 nav {
     background-color: #121111;
     width: 100%;
@@ -213,7 +206,6 @@ nav {
     color: #ff6600;
 }
 
-/* Katalogi / grid */
 .katalogi {
     width: 100%;
     max-width: 1200px;
@@ -236,7 +228,6 @@ nav {
     max-width: 650px;
 }
 
-/* Slider */
 .Markislider-container {
     width: 90%;
     margin: 20px auto;
@@ -275,7 +266,6 @@ nav {
     display: block;
 }
 
-/* Responsywność */
 @media screen and (max-width: 1024px) {
     header {
         flex-direction: column;
@@ -348,17 +338,13 @@ nav {
     }
 }
 
-/* zabezpieczenie przed overflow */
 * {
     max-width: 100%;
 }
 
-/* === SOFT RESPONSYWNOŚĆ – zachowuje układ === */
-
-/* Header i nagłówek */
 @media (max-width: 992px) {
     header {
-        flex-wrap: wrap; /* pozwala elementom zawijać się */
+        flex-wrap: wrap; 
         padding: 10px;
         height: auto; 
     }
@@ -396,4 +382,5 @@ nav {
     width: 100%;
     height: 70px;
 }
+
 
