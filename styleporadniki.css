@@ -229,12 +229,10 @@ main{
     max-width: 100%;
 }
 
-/* === SOFT RESPONSYWNOŚĆ – zachowuje układ === */
 
-/* Header i nagłówek */
 @media (max-width: 992px) {
     header {
-        flex-wrap: wrap; /* pozwala elementom zawijać się */
+        flex-wrap: wrap; 
         padding: 10px;
         height: auto; 
     }
@@ -346,3 +344,4 @@ main{
 .img-box:hover .img-text {
     opacity: 1;
 }
+
